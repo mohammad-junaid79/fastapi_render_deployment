@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from mangum import Mangum
+
 
 # Initialize FastAPI app
 app = FastAPI(title="FastAPI Lambda Backend")
@@ -35,8 +35,3 @@ async def create_user(user: User):   # use async for Lambda safety
 @app.get("/users/count")
 async def count_users():
     return {"total_users": len(users)}
-
-
-
-# AWS Lambda handler
-handler = Mangum(app, lifespan="off")
