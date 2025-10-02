@@ -9,7 +9,7 @@ app = FastAPI(title="FastAPI Lambda Backend")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For production, restrict to CloudFront/API Gateway URL
+    allow_origins=["https://fastapi-render-deployment-3.onrender.com/,*"],  # For production, restrict to CloudFront/API Gateway URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
